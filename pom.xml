@@ -170,10 +170,15 @@ under the License.
                             <artifactId>checkstyle</artifactId>
                             <version>8.27</version>
                         </dependency>
+                        <dependency>
+                            <groupId>io.fusion</groupId>
+                            <artifactId>fusionbuildtools</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
+                        </dependency>
                     </dependencies>
                     <configuration>
-                        <configLocation>src/site/fusion_google_checks.xml</configLocation>
-                        <headerLocation>src/site/license.txt</headerLocation>
+                        <configLocation>fusion_google_checks.xml</configLocation>
+                        <headerLocation>license.txt</headerLocation>
                         <encoding>UTF-8</encoding>
                         <consoleOutput>true</consoleOutput>
                         <failsOnError>true</failsOnError>
@@ -234,12 +239,20 @@ under the License.
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>3.1.12.2</version>
+                    <version>4.2.0</version>
+                    <configuration>
+                        <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
+                    </configuration>
                     <dependencies>
                         <dependency>
                             <groupId>com.github.spotbugs</groupId>
                             <artifactId>spotbugs</artifactId>
-                            <version>4.0.0-beta4</version>
+                            <version>4.3.0</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>io.fusion</groupId>
+                            <artifactId>fusionbuildtools</artifactId>
+                            <version>1.0.0-SNAPSHOT</version>
                         </dependency>
                     </dependencies>
                     <executions>
